@@ -9,13 +9,7 @@ var pets = [
     return new Date().getFullYear() - pet.bornOn;
   }
 */
-let pets = [
-    { name: "Max", type: "dog", bornOn: 2018 },
-    { name: "Angel", type: "cat", bornOn: 2015 },
-    { name: "Jasper", type: "dog", bornOn: 2016 }
-  ];
-  const getAge= (pet) => { return new Date().getFullYear() - pet.bornOn };
-  
+
   
 
 /*___________________________________________________________________________ 
@@ -28,17 +22,9 @@ var petsWithAge = [];
   }
  console.log(petsWithAge);
 
- */
+ /*___________________________________________________________________________ 
 
 
-const petsWithAge = [];
-	petsWithAge.forEach((pet)=>{
-alert(pet[i].getAge);
-
-  });
-
-
-/*
   var dogs = [];
   for (var i = 0; i < pets.length; i++) {
     var pet = pets[i];
@@ -47,17 +33,6 @@ alert(pet[i].getAge);
     }
   }
   console.log(dogs);
-/*___________________________________________________________________________ */
-
-
-const dogs = [];
-    return pets.filter((pet)=>{
-       let pet = pets[i];
-       
-            return pet.type === "dog";    
-    })
-
-    console.log(dogs);
 
 
 /*___________________________________________________________________________ 
@@ -70,10 +45,42 @@ const dogs = [];
     }
   }
   console.log("Jasper is " + jasper.age + " years old");
-  */
- const jasper;
- return pets.find((pet)=>{
-    return person.name==name;
- })
- console.log("Jasper is " + jasper.age + " years old");    
 
+
+/*___________________________________________________________________________ 
+
+
+const jasper;
+ return pets.find((pet)=>{
+    return pet.name==name;
+ })
+ console.log("Jasper is " + jasper.age + " years old");  
+
+
+ 
+/*_______________________________________________________________________________________ */
+
+ let pets = [
+  { name: "Max", type: "dog", bornOn: 2018 },
+  { name: "Angel", type: "cat", bornOn: 2015 },
+  { name: "Jasper", type: "dog", bornOn: 2016 }
+];
+const getAge = (pet) => { return new Date().getFullYear() - pet.bornOn };
+
+
+
+pets.forEach((pet)=> {pet.age = getAge(pet)})
+console.log(pets)
+
+
+
+const dogs = pets.filter(pet=> pet.type ==="dog");
+console.log(dogs)
+
+
+
+let Jasper = pets.find(pet => pet.name === "Jasper")
+console.log(` Jasper is ${Jasper.age} years old`)
+
+
+/*________________________________________________________________________________________*/
